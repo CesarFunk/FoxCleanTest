@@ -14,7 +14,7 @@ namespace SystemFacturacion.Models
         public string Details { get; set; }
         public int CategoryID { get; set; }
         public DateTime Date { get; set; }
-        public byte[] Image { get; set; }
+   
 
 
         //propiedades virtuales

@@ -1,0 +1,48 @@
+﻿@model  ICollection<SystemFacturacion.Models.Category>
+
+
+
+@{
+    ViewBag.Title = "Categoria | Control";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-info align-right" href="@Url.Action("Add","Category")">Nuevo </a>
+
+<div class="container">
+
+
+
+
+    
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+    {
+            <tr>
+                <td>
+                    @item.CategoryID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    <a class="btn btn-success" href="@Url.Action("Edit","Category",new { Id = item.CategoryID })"><span class="fas fa-pencil-alt"></span></a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete","Category",new { Id = item.CategoryID })"><span class="fas fa-trash"></span></a>
+                </td>
+            </tr>
+}
+            </tbody>
+        </table>
+
+  
+
+</div>
