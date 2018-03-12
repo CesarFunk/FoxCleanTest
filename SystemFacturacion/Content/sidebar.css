@@ -2,6 +2,8 @@
     overflow-x: hidden;
 }
 
+
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -36,7 +38,7 @@
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
+    padding: 25px;
 }
 
 #wrapper.toggled #page-content-wrapper {

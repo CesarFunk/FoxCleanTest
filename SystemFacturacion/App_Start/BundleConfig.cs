@@ -26,7 +26,7 @@ namespace SystemFacturacion
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/sidebar.css",
-                      "~/Content/font-awesome.min.css"));
+                      "~/Content/fontawesome-all.min.css"));
         }
     }
 }

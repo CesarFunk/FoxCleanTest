@@ -5,57 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - SystemControl</title>
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div id="wrapper">
+
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
+
+
+
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Sistema de Control", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </a>
                 </li>
                 <li>
-                    @Html.ActionLink("Inicio", "Index", "Home")
+                    <a href="@Url.Action("Index","Home")"><i class="fas fa-home"></i> Inicio </a>
+                  
+                    
                 </li>
                 <li>
-                    @Html.ActionLink("Acerca de", "About", "Home")
+                    <a href="#"><i class="fas fa-users"></i> Clientes</a>
                 </li>
                 <li>
-                    @Html.ActionLink("Contacto", "Contact", "Home")
+                   <a href="#"><i class="fas fa-archive"></i> Productos</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#"><i class="fas fa-calendar"></i> Facturas</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#"><i class="fas fa-address-book"></i> Detalles</a>
                 </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                
             </ul>
+
+
         </div>
         <!-- /#sidebar-wrapper -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a id="menu-toggle" href="#menu-toggle" class="nav-link"> <i class="fas fa-align-justify"></i> Menu</a>
+                    </li>
+                    
+                 
+                </ul>
+                <p class="text-center">Sistema de Control.</p>
+            </div>
+        </nav>
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <h1>Simple Sidebar</h1>
-                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
-            </div>
+
+           
             @RenderBody()
             <hr />
             <footer>
-                <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+                <p>&copy; @DateTime.Now.Year - Control</p>
             </footer>
         </div>
         <!-- /#page-content-wrapper -->
@@ -67,6 +79,11 @@
     @RenderSection("scripts", required: false)
     <!-- Menu Toggle Script -->
     <script>
+        $(document).ready(function(){
+
+            $("#wrapper").toggleClass("toggled");
+        });
+
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
