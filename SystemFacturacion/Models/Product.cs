@@ -11,7 +11,7 @@ namespace SystemFacturacion.Models
     {
         public int ProductID { get; set; }
         public string Name { get; set; }
-        public string Details { get; set; }
+    
         public int CategoryID { get; set; }
         public DateTime Date { get; set; }
    
@@ -19,7 +19,7 @@ namespace SystemFacturacion.Models
 
         //propiedades virtuales
         public virtual ICollection<Detail> Detalle { get; set; }
-        public virtual Category categoria { get; set; }
-
+        public virtual ICollection<Category> categoria { get; set; }
+        public virtual Category _Categoria { get; set; }
     }
 }

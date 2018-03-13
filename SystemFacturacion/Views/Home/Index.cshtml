@@ -13,10 +13,10 @@
                 Clientes
             </div>
             <div class="card-body">
-                <h1>6</h1>
+                <h1>@ViewBag.Clientes</h1>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-info">Control de Clientes</a>
+                <a href="@Url.Action("Index","Costumer")" class="btn btn-info">Control de Clientes</a>
             </div>
         </div>
 
@@ -27,10 +27,10 @@
                 Facturas
             </div>
             <div class="card-body">
-                <h1>6</h1>
+                <h1> @ViewBag.Facturas</h1>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-warning">Control de Facturas</a>
+                <a href="@Url.Action("Index","Bill")" class="btn btn-warning">Control de Facturas</a>
             </div>
         </div>
 
@@ -41,10 +41,10 @@
                 Productos
             </div>
             <div class="card-body">
-                <h1>6</h1>
+                <h1>@ViewBag.Productos</h1>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-dark">Control de Productos</a>
+                <a href="@Url.Action("Index","Product")" class="btn btn-dark">Control de Productos</a>
             </div>
         </div>
 

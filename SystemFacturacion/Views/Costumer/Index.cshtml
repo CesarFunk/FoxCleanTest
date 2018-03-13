@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SystemFacturacion.Models.Costumer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-info align-right" href="@Url.Action("Add","Costumer")">Nuevo </a>
+
+<div class="container">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th>Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @item.CostumerID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.BirthDay
+                </td>
+                
+                <td>
+                    <a class="btn btn-success" href="@Url.Action("Edit","Costumer",new { Id = item.CostumerID })"><span class="fas fa-pencil-alt"></span></a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete","Costumer",new { Id = item.CostumerID })"><span class="fas fa-trash"></span></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+</div>

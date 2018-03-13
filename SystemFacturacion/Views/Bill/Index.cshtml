@@ -1,13 +1,11 @@
-﻿@model ICollection<SystemFacturacion.Models.Product>
-
+﻿@model ICollection<SystemFacturacion.Models.Bill>
 
 @{
-    ViewBag.Title = "Productos | Control";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<a class="btn btn-info align-right" href="@Url.Action("Add","Product")">Nuevo </a>
+<a class="btn btn-info align-right" href="@Url.Action("Add","Bill")">Nuevo </a>
 
 <div class="container">
 
@@ -15,9 +13,9 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-
-                <th scope="col">Nombre</th>
+               
                 <th scope="col">Fecha</th>
+                <th scope="col">Codigo de Pago</th>
                 <th>Acciones</th>
 
             </tr>
@@ -27,19 +25,18 @@
             {
             <tr>
                 <td>
-                    @item.ProductID
+                    @item.BillID
                 </td>
-                <td>
-                    @item.Name
-                </td>
-
+                
                 <td>
                     @item.Date
                 </td>
-
                 <td>
-                    <a class="btn btn-success" href="@Url.Action("Edit","Product",new { Id = item.ProductID })"><span class="fas fa-pencil-alt"></span></a>
-                    <a class="btn btn-danger" href="@Url.Action("Delete","Product",new { Id = item.ProductID })"><span class="fas fa-trash"></span></a>
+                    @item.PayCode
+                </td>
+                <td>
+                    <a class="btn btn-success" href="@Url.Action("Edit","Bill",new { Id = item.BillID })"><span class="fas fa-pencil-alt"></span></a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete","Bill",new { Id = item.BillID })"><span class="fas fa-trash"></span></a>
                 </td>
             </tr>
             }
@@ -49,4 +46,3 @@
 
 
 </div>
-

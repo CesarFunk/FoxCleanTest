@@ -15,6 +15,7 @@ namespace SystemFacturacion.Models
         public int PayCode { get; set; }
 
         //propiedades virtuales
-        public virtual Costumer cliente { get; set; }
+        public virtual ICollection<Costumer> _lista { get; set; }
+        public virtual Costumer _Cliente { get; set; }
     }
 }

@@ -18,23 +18,17 @@ namespace SystemFacturacion.Controllers
 
         public ActionResult Index()
         {
-            _db.Cliente.ToList();
+            var clientes = _db.Cliente.ToList().Count();
+            var facturas = _db.Factura.ToList().Count();
+            var productos = _db.Producto.ToList().Count();
+
+            ViewBag.Clientes = clientes;
+            ViewBag.Facturas = facturas;
+            ViewBag.Productos = productos;
 
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+      
     }
 }
