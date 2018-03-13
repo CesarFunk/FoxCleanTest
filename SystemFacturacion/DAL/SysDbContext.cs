@@ -11,7 +11,7 @@ namespace SystemFacturacion.DAL
 {
     public class SysDbContext : DbContext
     {
-        private const string StrConexion = @"Data Source=DESKTOP-7C3K8Q0\SQLEXPRESS;Initial Catalog=DbSystemFacturacion;Integrated Security=True";
+        private const string StrConexion = @"Data Source=SQL5033.site4now.net;Initial Catalog=DB_A37316_system;User Id=DB_A37316_system_admin;Password=funk12345;";
         public SysDbContext() : base(StrConexion)
         {
         }
